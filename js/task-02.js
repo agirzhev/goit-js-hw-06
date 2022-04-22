@@ -9,18 +9,17 @@ const ingredients = [
 
 
 const createList = () => {
-  const ul = document.querySelectorAll(`ingredients`);
-  //list = [];
+  
+  const ul = document.querySelector('#ingredients');
 
   ingredients.forEach(function callback (ingredient) {
-    const list = document.createElement(`li`);
+    const list = document.createElement('li');
     list.className = `item`;
     list.innerHTML = ingredient;
-    console.log(list)
-    ul.insertAdjacentHTML(`beforeend`, list);   
+    ul.append(list)
   
   });
-  //refs.body.appendChild(ul);
+
 }  
 
 createList();
