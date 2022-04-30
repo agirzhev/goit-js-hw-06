@@ -19,7 +19,11 @@ const createList = () => {
   
   const element = images.map((image)=>'<li><img src='+image.url+' alt='+image.alt+'></li>');
   ul.insertAdjacentHTML('beforeEnd', element);
-  body.appendChild(ul);
+  
+  const items = document.querySelectorAll("li");
+  items.forEach(function (item) {
+  item.style.listStyleType = 'none';
+});
 
 }  
 
