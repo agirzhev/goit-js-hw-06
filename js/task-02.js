@@ -11,15 +11,16 @@ const ingredients = [
 const createList = () => {
   
   const ul = document.querySelector('#ingredients');
-
-  ingredients.forEach(function callback (ingredient) {
-    const list = document.createElement('li');
-    list.className = `item`;
-    list.innerHTML = ingredient;
-    ul.append(list)
+ 
+  const listItems = []; 
   
+  ingredients.forEach(function callback(ingredient) {
+    const list = '<li class="item">' + ingredient + '</li>';
+    listItems.push(list);
   });
-
+  
+  ul.insertAdjacentHTML('beforeEnd', listItems);
+  
 }  
 
 createList();

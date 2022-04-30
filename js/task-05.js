@@ -2,11 +2,14 @@ const inputText = document.querySelector('#name-input');
 const element = document.querySelector('#name-output');
 let text = '';
 
-inputText.addEventListener("keydown", logMessage => {
+
+inputText.addEventListener("keyup", logMessage => {
   
-  text = text + logMessage.key;
+  if (inputText.value === "") {
+    text = 'Anonymous';
+  }else{text = inputText.value}
 
   element.textContent = text;
 
-}  
+  }  
 );
