@@ -15,11 +15,13 @@ const createList = () => {
   const listItems = []; 
   
   ingredients.forEach(function callback(ingredient) {
-    const list = '<li class="item">' + ingredient + '</li>';
-    listItems.push(list);
+    const list = document.createElement("li") //'<li class="item">' + ingredient + '</li>';
+    list.textContent = ingredient;
+    list.className = "item";
+    listItems.push(list.outerHTML);
   });
-  
-  ul.insertAdjacentHTML('beforeEnd', listItems);
+  const Items = listItems.join('') 
+  ul.insertAdjacentHTML('beforeEnd', Items);
   
 }  
 

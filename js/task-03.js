@@ -17,7 +17,8 @@ const createList = () => {
   
   const ul = document.querySelector('.gallery');
   
-  const element = images.map((image) => '<li><img src=' + image.url + ' alt=' + image.alt + '></li>');
+  const element = images.map((image) => '<li><img src=' + image.url + ' alt=' + image.alt + '></li>').join('');
+  
   ul.insertAdjacentHTML('beforeEnd', element);
 
   const items = document.querySelectorAll("li");
